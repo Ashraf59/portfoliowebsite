@@ -1,0 +1,810 @@
+/* 
+===================
+Basic Setup 
+===================*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Titillium Web', sans-serif;
+    text-rendering: optimizeLegibility;
+    line-height: 1.3;
+}
+
+ul li{
+
+    list-style: none;
+}
+
+/* 
+===================
+Reuseable Component
+===================*/
+
+.row{
+
+    max-width: 114rem;
+    margin: 0 auto;
+}
+
+/* 
+===================
+Reuseable Component
+===================*/
+
+section{
+
+    padding: 10rem;
+}
+
+h2{
+
+    font-size: 3.5rem;
+    margin-top: 0;
+    margin-bottom: 2.5rem;
+    letter-spacing: .2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+}
+
+h2::after{
+
+    content: "";
+    display: block;
+    height: .4rem;
+    background: #14a58c;
+    width: 8.5rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+h3{
+
+    font-size: 2.3rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    
+}
+
+h4{
+
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.box p{
+    font-size: 1.6rem; 
+    margin-top: 3rem;
+    /* text-align: center; */
+    font-weight: 300;
+    color: #fff;
+}
+
+/* 
+===================
+Button
+===================*/
+
+.btn:link,
+.btn-visited,
+.btn{
+
+    padding: 1.5rem 5rem;
+    /* background: #333;
+    border-bottom: .3rem solid #000; */
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    border-radius: .5rem;
+    margin-top: 6rem;
+
+}
+
+/* 
+===================
+Paragraph
+===================*/
+
+.little-description{
+
+    font-size: 1.8rem;
+    /* color: #fff; */
+    width: 60%;
+    margin: 0 auto;
+    line-height: 3rem;
+}
+
+/* 
+===================
+Header Section
+===================*/
+
+header{
+
+    background: linear-gradient(rgba(135, 80, 156, 0.89), rgba(135, 80, 156, 0.89)), url(img/hero-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    height: 90vh;
+    position: relative;
+}
+
+.logo{
+
+    height: 3.5rem;
+    width: auto;
+    margin-top: 5.5rem;
+    float: left;
+}
+
+/* 
+===================
+Heading
+===================*/
+
+h1{
+    
+    font-size: 4.2rem;
+    color: #fff;
+    
+    
+}
+
+
+/* .clearfix::after{
+
+    content: "";
+    display: table;
+    clear: both;
+    height: 0;
+    visibility: hidden;  
+} */
+
+
+/* 
+===================
+Main Navigation
+===================*/
+
+.main-nav{
+
+    float: right;
+    margin-top: 5.5rem;
+}
+
+.main-nav li{
+
+    display: inline-block;
+    margin-left: 1rem;
+   
+}
+
+.main-nav li:first-child{
+
+    margin-left: 0 ;
+   
+}
+
+.main-nav li a{
+
+    color:#fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: .6rem 1.7rem;
+    border-radius: .3rem;
+    display: inline-block;
+    font-size: 1.6rem;
+    transition: 0.5s;
+}
+
+.main-nav li:hover a{
+
+    background: #643a79;
+  
+}
+
+/* 
+===========================================
+Sticky Navigation (Waypoint jQuery plugin)
+===========================================*/
+
+.sticky{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #87509c;
+    padding: 1.5rem 0;
+    box-shadow: 0 .2rem .5rem rgba(255, 255, 255, .9);
+    z-index: 9999;
+    
+}
+
+.sticky .logo{
+ 
+    margin-top: 0;
+}
+
+.sticky .main-nav{
+ 
+    margin-top: 0;
+}
+
+.active{
+
+    background: #643a79;
+    border-radius: .3rem;
+   
+}
+
+.hero-text-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 95rem;
+
+  
+}
+
+.btn-hero:link,
+.btn-hero:visited{
+
+    background: #eb7d4b;
+    border-bottom: .5rem solid #c86a40;
+
+}
+
+
+
+/* 
+===================
+Mobile Menu
+===================*/
+.mobile-menu span{
+
+    color: #fff;
+    font-size: 4rem;
+    float: right;
+    margin-top: 2rem;
+    display: none;
+}
+.mobile-menu span:hover{
+
+    cursor: pointer;
+}
+.overlay{
+    width: 0;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
+    overflow-x: hidden;
+    transition: .5s;
+}
+.overlay-content{
+    position: relative;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+
+.overlay a{
+    text-decoration: none;
+    display: block;
+    font-size: 4rem;
+    padding: 1rem 0;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+}
+
+.overlay a:hover{
+
+    color:#fff;
+}
+
+.overlay .closebtn{
+    position: absolute;
+    top: 2rem;
+    right: 4.5rem;  
+    font-size: 6rem; 
+}
+
+.sticky .mobile-menu span{
+
+    margin-top: 0;
+    line-height: 1;
+}
+
+
+/* 
+===================
+Service Section
+===================*/
+
+.services-section{
+
+    background: linear-gradient(rgba(23, 194, 163, 0.9), rgba(23, 194, 163, 0.9)), url(img/services-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    color: #fff;
+    text-align: center;
+}
+
+.services-icon{
+
+    height: 12rem;
+    margin-top: 8rem;
+    margin-bottom: 6rem;
+}
+
+
+/* 
+===================
+Team Section
+===================*/
+
+.team-section{
+
+    background: linear-gradient(rgba(231, 241, 248, 0.9), rgba(231, 241, 248, 0.9)), url(img/team-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.team-section h2{
+
+    color: #3c4761;
+    
+}
+
+.team-section p{
+
+    margin-bottom: 5rem;
+    
+}
+
+.team-section h2::after{
+
+    background: #c8d9e5;
+}
+
+.team-member{
+
+        margin-top: 2rem;
+        margin-bottom: 3.5rem;
+        height: 20rem;
+        width: 20rem;
+        border-radius: 50%;
+       
+    
+}
+
+
+.team-section h3{
+
+    color: #3c4761;
+    font-size: 2.4rem;
+    margin-bottom: .5rem;
+}
+
+.roll{
+
+    color: #30bae7;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    display: inline-block;
+    
+}
+
+.team-section .box p{
+
+    color:#3c4761;
+}
+
+
+/* 
+===================
+Social link
+===================*/
+
+.social-link ul li{
+
+    display: inline-block;
+    margin: 0 .4rem;
+   
+   
+}
+
+.social-link ul li a:link{
+
+    color: #fff;
+    
+}
+
+.social-link ul li a:link i::before{
+
+    background: #bdd1df;
+    height: 1.5rem;
+    width: 1.5rem;
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 1rem;
+    border-radius: 50%;
+    transition: .5s;
+}
+
+    .social-link ul li a:hover i::before{
+
+        background: #393939;
+        transform: rotate(360deg);
+        color: #fff;
+       
+    }
+
+    .social-link .fa, .fab, .fad, .fal, .far, .fas{
+
+        color: #fff;
+    }
+
+
+    /* 
+===================
+Skill Section
+===================*/
+
+/* 
+===================
+Start animated-circle css
+===================*/
+
+svg.radial-progress {
+    height: auto;
+    max-width: 200px;
+    padding: 1em;
+    transform: rotate(-90deg);
+    width: 100%;
+  }
+  
+  svg.radial-progress circle {
+    fill: rgba(0,0,0,0);
+    stroke: #fff;
+    stroke-dashoffset: 219.91148575129; 
+    stroke-width: 10;
+  }
+  
+  svg.radial-progress circle.incomplete { opacity: 0.25; }
+  
+  svg.radial-progress circle.complete { stroke-dasharray: 219.91148575129; }
+  
+  svg.radial-progress text {
+    fill: #fff;
+    text-anchor: middle;
+  }
+
+/* 
+===================
+End animated-circle css
+===================*/
+
+
+
+
+.skill-section{
+
+    color: #3c4761;
+    text-align: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),url(img/skill-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.skill-section h2::after{
+
+    background: #dfe8ed;
+}
+
+.skill-section .box{
+
+    margin-top: 3.5rem;
+}
+
+svg.radial-progress circle{
+
+    stroke-width: 5;
+}
+
+svg.radial-progress text{
+
+    fill: #3c4761;
+    font-size: 1.5rem;
+}
+
+svg.web-design circle{
+
+    stroke: #30bae7;
+}
+
+svg.html-css circle{
+
+    stroke: #d74680;
+}
+
+svg.graphic-design circle{
+
+    stroke: #15c7a8;
+}
+
+svg.ui-ux circle{
+
+    stroke: #eb7d4b;
+}
+
+/*
+===================
+Portfolio Section
+===================*/
+
+
+.portfolio-section{
+
+    color: #3c4761;
+    text-align: center;
+    background: linear-gradient(rgba(255, 221, 153, 0.9), rgba(255, 221, 153, 0.9)),url(img/portfolio-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+.portfolio-section h2::after{
+
+    background: #e5c37f;
+}
+
+.portfolio-filter{
+
+    margin: 4.5rem 0;
+}
+
+.portfolio-filter button{
+
+    background: #ebc985;
+    padding: 1rem 2.5rem;
+    font-size: 1.8rem;
+    margin: 0 .5rem;
+    border-radius: .5rem;
+    border: 0 solid;
+    transition: .5s;
+   
+}
+
+.portfolio-filter button:hover{
+
+    cursor: pointer;
+
+}
+
+.portfolio-image{
+
+    width: 100%;
+    height: auto;
+}
+
+
+.btn-load-more{
+
+    background: #17c2a4;
+    border-bottom: .5rem solid #14a58c;
+}
+
+.portfolio-section .mixitup-control-active{
+
+    background: #fff;
+}
+
+
+/*
+===================
+Testimonial Section
+===================*/
+
+.testimonial-section{
+
+    background: linear-gradient(rgba(224, 68, 130, 0.9), rgba(224, 68, 130, 0.9)),url(img/testimonial-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: #fff;
+    
+}
+
+.testimonial-section h2::after{
+
+    background: #b73c6d;
+}
+
+
+
+.testimonial-section .col:nth-child(3){
+
+    margin-left: 0;
+}
+
+.testimonial-section .little-description{
+
+    text-align: center;
+}
+
+.testimonial-section .col:nth-child(1),
+.testimonial-section .col:nth-child(2){
+
+    margin-top: 5rem;
+}
+
+.testimonial-section .col:nth-child(3),
+.testimonial-section .col:nth-child(4){
+
+    margin-top: 10rem;
+}
+
+.client-photo{
+
+    width: 10rem;
+    float: left;
+}
+
+.client-photo img{
+
+    height: 8rem;
+    border-radius: 50%;
+    margin-bottom: 3rem;
+}
+
+.client-review{
+
+    width: 35rem;
+    float: left;
+
+    
+}
+
+.client-review p{
+
+    font-size: 2.1rem;
+    font-style: italic;
+    margin-top: 0;
+    margin-bottom: 3rem;
+}
+
+.client-review .roll{
+
+    color: #ffdd99;
+}
+
+/*
+===================
+Contact Section
+===================*/
+
+
+.contact-section{
+
+    background: linear-gradient(rgba(60, 83, 153, 0.9), rgba(60, 83, 153, 0.9)), url(img/contact-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    text-align: center;
+    background-attachment: fixed;
+}
+
+.contact-section h2::after{
+
+    background: #273a71;
+}
+
+.contact-section form{
+
+    margin-top: 5rem;
+    width: 60%;
+    margin-left: 20%;
+   
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea{
+
+    background: #273a71;
+    border: 0 solid;
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: .5rem;
+    color: #fff;
+    font-size: 1.8rem;
+    margin: .7rem 0;
+    border: 1px solid #d74680;
+}
+
+
+
+
+.contact-section form ::placeholder{
+
+    color: #fff;
+    opacity: .8;
+}
+
+.btn-submit{
+
+    background: #30bae7;
+    border: 0;
+    border-bottom: .5rem solid #299ec5;
+    
+}
+
+.btn-submit:hover{
+
+    cursor: pointer;
+}
+
+
+/*
+===================
+Footer Section
+===================*/
+
+.footer-section{
+    background: #344b8e;
+    text-align: center;
+    padding: 4.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    
+
+}
+
+.footer-section li{
+    
+    display: inline-block;
+    margin: 0 1.5rem;
+   
+}
+
+.footer-section li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 2.4rem;
+    text-transform: capitalize;
+    
+}
+
+.footer-section li:hover a{
+    
+    color: #30bae7;
+}
